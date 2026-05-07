@@ -216,25 +216,25 @@ const projects = [
     source_code_link: "https://zeneva.space",
   },
   {
-    name: "NexusBiz",
+    name: "Al-Ansar Orphan Care",
     description:
-      "A premium full-stack business intelligence and digital solution platform built for high-performance enterprise management and client engagement.",
+      "A comprehensive donation and management platform engineered for an NGO to streamline orphan sponsorships, facilitate real-time secure contributions, and manage community outreach programs.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "firebase",
+        name: "tailwind",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "firebase",
         color: "pink-text-gradient",
       },
     ],
     image: "/planet/bime-portfolio-images/alansororphancare.png",
-    source_code_link: "https://nexusbiz.vercel.app",
+    source_code_link: "https://alansarorphancare.org",
   },
   {
     name: "Scale with Olaiya",
