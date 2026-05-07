@@ -411,27 +411,119 @@ const MePage = () => {
           </div>
         </div>
 
-        {/* Tech Stack Infinite Marquee */}
-        <div className="w-full overflow-hidden border-t border-zinc-100 py-6 bg-zinc-50/30">
-          <div className="animate-scroll gap-12 items-center">
-            {/* Tech Badges Loop 1 */}
-            {["React", "Next.js", "Tauri", "Node.js", "TailwindCSS", "JavaScript", "HTML5", "CSS3", "Git"].map((tech, idx) => (
-              <span
-                key={`t1-${idx}`}
-                className="text-zinc-400 hover:text-zinc-900 font-extrabold text-[16px] md:text-[20px] uppercase tracking-wider transition-colors cursor-default whitespace-nowrap mx-4"
-              >
-                // {tech}
-              </span>
-            ))}
-            {/* Duplicate for Seamless Loop */}
-            {["React", "Next.js", "Tauri", "Node.js", "TailwindCSS", "JavaScript", "HTML5", "CSS3", "Git"].map((tech, idx) => (
-              <span
-                key={`t2-${idx}`}
-                className="text-zinc-400 hover:text-zinc-900 font-extrabold text-[16px] md:text-[20px] uppercase tracking-wider transition-colors cursor-default whitespace-nowrap mx-4"
-              >
-                // {tech}
-              </span>
-            ))}
+        {/* How Can I Help? Banner Section */}
+        <div className="w-full max-w-[53rem] px-6 mt-16 select-none">
+          <div className="w-full rounded-[32px] overflow-hidden bg-zinc-950 py-12 px-6 flex flex-col items-center justify-center text-center relative shadow-xl border border-zinc-900">
+            {/* Abstract Background Accents */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-zinc-950 via-zinc-900 to-zinc-950 opacity-40"></div>
+            
+            <div className="relative z-10 flex flex-col items-center">
+              <h2 className="text-[28px] md:text-[36px] font-bold text-white mb-2 font-display">
+                How Can I Help?
+              </h2>
+              <p className="text-zinc-400 text-[14px] md:text-[15px] mb-8">
+                Let's turn your vision into something amazing.
+              </p>
+              
+              {/* Glassmorphic Sliding Badges */}
+              <div className="w-full overflow-hidden max-w-[40rem]">
+                <div className="animate-scroll gap-4 items-center">
+                  {["GitHub", "Figma", "Photoshop", "Premiere Pro", "TailwindCSS", "Bootstrap", "React", "Next.js", "Tauri"].map((badge, idx) => (
+                    <span
+                      key={`b1-${idx}`}
+                      className="bg-white/95 hover:bg-white text-zinc-800 font-bold text-[13px] sm:text-[14px] px-5 py-2.5 rounded-full shadow-sm whitespace-nowrap mx-2 select-none cursor-default transition-all duration-200"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                  {/* Duplicate Loop */}
+                  {["GitHub", "Figma", "Photoshop", "Premiere Pro", "TailwindCSS", "Bootstrap", "React", "Next.js", "Tauri"].map((badge, idx) => (
+                    <span
+                      key={`b2-${idx}`}
+                      className="bg-white/95 hover:bg-white text-zinc-800 font-bold text-[13px] sm:text-[14px] px-5 py-2.5 rounded-full shadow-sm whitespace-nowrap mx-2 select-none cursor-default transition-all duration-200"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Get in touch Form Section */}
+        <div className="w-full max-w-[53rem] px-6 py-16 flex flex-col items-start select-none">
+          <h2 className="text-[28px] md:text-[36px] font-bold text-zinc-950 tracking-tight mb-4 font-display text-left">
+            Get in touch
+          </h2>
+          <p className="text-zinc-500 text-[14px] sm:text-[15px] leading-relaxed mb-8 max-w-[42rem] text-left">
+            I'm always interested in exploring new opportunities, collaborating, or exchanging
+            ideas with like-minded individuals. Feel free to book a call or email me if you'd like
+            to see my portfolio deck or to discuss a potential project.
+          </p>
+
+          <form className="w-full flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="w-full bg-zinc-50/50 border border-zinc-200 focus:border-zinc-400 focus:outline-none rounded-[16px] py-4 px-5 text-[14px] text-zinc-800 placeholder-zinc-400 transition-all duration-200"
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full bg-zinc-50/50 border border-zinc-200 focus:border-zinc-400 focus:outline-none rounded-[16px] py-4 px-5 text-[14px] text-zinc-800 placeholder-zinc-400 transition-all duration-200"
+              />
+            </div>
+            <textarea
+              placeholder="Write your Message"
+              rows="5"
+              className="w-full bg-zinc-50/50 border border-zinc-200 focus:border-zinc-400 focus:outline-none rounded-[20px] py-4 px-5 text-[14px] text-zinc-800 placeholder-zinc-400 transition-all duration-200 resize-none h-[150px]"
+            />
+            <button
+              type="submit"
+              className="w-full bg-black hover:bg-zinc-900 text-white font-semibold py-4 rounded-[20px] text-[15px] cursor-pointer transition-all duration-200 mt-2 shadow-md flex items-center justify-center gap-2"
+            >
+              <span>Send Message</span>
+            </button>
+          </form>
+        </div>
+
+        {/* Footer Section */}
+        <div className="w-full max-w-[53rem] px-6 flex flex-col items-center">
+          <div className="w-full h-[1px] bg-zinc-100 my-8"></div>
+          
+          <div className="flex flex-col items-center gap-4 py-8 w-full select-none">
+            <span className="text-[12px] sm:text-[13px] text-zinc-400 font-medium tracking-tight text-center">
+              © MMXXVI - Bello Imam - All rights reserved
+            </span>
+            
+            {/* Modern Social Icons Row */}
+            <div className="flex items-center justify-center gap-6 mt-1">
+              <a href="https://x.com" target="_blank" rel="noreferrer" title="Twitter / X">
+                <svg className="w-4 h-4 text-zinc-400 hover:text-zinc-800 transition-colors cursor-pointer" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" title="Instagram">
+                <svg className="w-4 h-4 text-zinc-400 hover:text-zinc-800 transition-colors cursor-pointer" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+              <a href="https://github.com/imam-bello" target="_blank" rel="noreferrer" title="GitHub">
+                <svg className="w-4 h-4 text-zinc-400 hover:text-zinc-800 transition-colors cursor-pointer" fill="currentColor" viewBox="0 0 24 24">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+              </a>
+              <a href="mailto:contact@bime.dev" title="Email">
+                <svg className="w-4 h-4 text-zinc-400 hover:text-zinc-800 transition-colors cursor-pointer" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </main>
