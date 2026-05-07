@@ -273,66 +273,68 @@ const MePage = () => {
         </div>
 
         {/* Here's What I've Been Up To Section */}
-        <div className="w-full max-w-[53rem] p-6 flex flex-col py-[40px] px-[1.5rem] md:px-[8rem] items-start gap-[25px]">
-          <h2 className="text-[25px] md:text-[32px] font-bold tracking-[-.03em] leading-[110%] text-zinc-900 border-b-2 border-zinc-100 pb-2 w-full font-display">
+        <div className="w-full max-w-[53rem] p-6 flex flex-col py-[50px] px-[1.5rem] md:px-[2rem] items-center gap-[30px]">
+          {/* Centered Tech Icons above Heading */}
+          <div className="flex items-center justify-center gap-6 opacity-30 grayscale">
+            <svg className="w-7 h-7 text-zinc-600" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 14.5h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+            </svg>
+            <svg className="w-7 h-7 text-zinc-600" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2c5.522 0 10 4.477 10 10s-4.478 10-10 10S2 17.523 2 12 6.478 2 12 2zm-1 6H9v8h2V8zm4 0h-2v8h2V8z"/>
+            </svg>
+            <svg className="w-7 h-7 text-zinc-600" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3a9 9 0 0 0-9 9 9 9 0 0 0 9 9 9 9 0 0 0 9-9 9 9 0 0 0-9-9zm1 14h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+          </div>
+
+          <h2 className="text-[28px] md:text-[36px] font-bold tracking-[-.03em] leading-[110%] text-zinc-900 text-center font-display">
             Here's What I've Been Up To.
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mt-4">
-            {projects.map((proj, idx) => (
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-6">
+            {projects.slice(0, 4).map((proj, idx) => (
               <div
                 key={idx}
-                className="group p-6 rounded-[24px] border border-zinc-200 hover:border-zinc-400 bg-white relative transition-all duration-300 hover:scale-[1.02] cursor-pointer shadow-sm flex flex-col justify-between min-h-[220px]"
-                onClick={() => proj.source_code_link && window.open(proj.source_code_link, "_blank")}
+                className="bg-white border border-zinc-200/80 rounded-[32px] p-6 flex flex-col justify-between hover:shadow-md hover:border-zinc-300 transition-all duration-300 w-full"
               >
                 <div>
-                  <div className="flex justify-between items-start mb-3">
-                    <span className="text-[12px] font-semibold tracking-wider text-zinc-400 uppercase">
-                      {proj.tags[0]?.name || "Web Application"}
-                    </span>
-                    {proj.source_code_link && (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="text-zinc-400 group-hover:text-zinc-800 transition-colors"
-                      >
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                        <polyline points="15 3 21 3 21 9" />
-                        <line x1="10" y1="14" x2="21" y2="3" />
-                      </svg>
-                    )}
+                  {/* Image container with rounded corners and border */}
+                  <div className="w-full h-[200px] rounded-[24px] overflow-hidden mb-5 border border-zinc-100 bg-zinc-50">
+                    <img
+                      src={proj.image}
+                      alt={proj.name}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
                   </div>
-                  <h3 className="text-[20px] font-extrabold tracking-tight text-zinc-900 group-hover:text-black mb-2 font-display">
+                  
+                  {/* Content */}
+                  <h3 className="text-zinc-900 text-[22px] font-bold tracking-tight mb-2 font-display text-left">
                     {proj.name}
                   </h3>
-                  <p className="text-[14px] leading-[1.5] text-zinc-500">
+                  <p className="text-zinc-500 text-[14px] leading-relaxed mb-6 text-left">
                     {proj.description}
                   </p>
                 </div>
-                <div className="flex items-center gap-1 text-[13px] font-bold text-zinc-400 group-hover:text-zinc-900 transition-colors mt-4">
+
+                {/* View Project Button */}
+                <button
+                  onClick={() => proj.source_code_link && window.open(proj.source_code_link, "_blank")}
+                  className="bg-[#f4f4f5] hover:bg-zinc-200/80 text-zinc-800 font-semibold py-3 px-5 rounded-[16px] text-[14px] flex items-center gap-1.5 self-start transition-all duration-200"
+                >
                   <span>View Project</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="transform group-hover:translate-x-1 transition-transform"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="w-4 h-4 mt-0.5"
                   >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
+                    <path
+                      fillRule="evenodd"
+                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                      clipRule="evenodd"
+                    />
                   </svg>
-                </div>
+                </button>
               </div>
             ))}
           </div>
