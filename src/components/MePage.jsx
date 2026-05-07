@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { projects } from "../constants";
+import { projects, experiences } from "../constants";
 
 const MePage = () => {
 
@@ -19,6 +19,13 @@ const MePage = () => {
         }
         .animate-scroll:hover {
           animation-play-state: paused;
+        }
+        .pixel-text {
+          font-family: 'Geist Mono', monospace;
+          background-image: linear-gradient(rgba(24, 24, 27, 0.85) 50%, transparent 50%), linear-gradient(90deg, rgba(24, 24, 27, 0.85) 50%, transparent 50%);
+          background-size: 4px 4px;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       `}</style>
 
@@ -335,6 +342,70 @@ const MePage = () => {
                     />
                   </svg>
                 </button>
+              </div>
+            ))}
+          </div>
+
+          {/* Centered View All Button */}
+          <div className="flex justify-center w-full mt-10 mb-12">
+            <button
+              onClick={() => window.open("https://github.com/imam-bello", "_blank")}
+              className="bg-black hover:bg-zinc-800 text-white font-semibold py-3.5 px-7 rounded-full text-[14px] flex items-center gap-1.5 shadow-md transition-all duration-200"
+            >
+              <span>View All</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Giant Custom BIME Pixel Ticker Section */}
+        <div className="w-full flex justify-center py-6 overflow-hidden select-none">
+          <span className="pixel-text text-[100px] sm:text-[140px] md:text-[200px] font-black tracking-tighter leading-none text-zinc-900 select-none uppercase">
+            BIME
+          </span>
+        </div>
+
+        {/* Thin Divider Line */}
+        <div className="w-full max-w-[53rem] px-6">
+          <div className="w-full h-[1px] bg-zinc-100 my-8"></div>
+        </div>
+
+        {/* Modern Work Experience Row Section */}
+        <div className="w-full max-w-[53rem] px-6 py-12 flex flex-col items-start">
+          <h2 className="text-[24px] md:text-[28px] font-bold text-zinc-950 tracking-tight mb-8 font-display">
+            Work Experience
+          </h2>
+          
+          <div className="flex flex-col w-full">
+            {experiences.map((exp, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col sm:flex-row sm:items-center justify-between py-6 border-b border-zinc-100 w-full hover:bg-zinc-50/50 px-4 rounded-[16px] transition-all duration-200"
+              >
+                <span className="text-zinc-400 font-medium text-[14px] w-[160px] shrink-0 text-left mb-2 sm:mb-0">
+                  {exp.date}
+                </span>
+                
+                <div className="flex items-center gap-2 mt-1 sm:mt-0 flex-wrap">
+                  <span className="text-zinc-700 font-medium text-[15px]">
+                    {exp.title} at
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 bg-[#eff6ff] border border-blue-100 text-blue-600 font-semibold text-[13px] px-3.5 py-1.5 rounded-full select-none">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                    {exp.company_name}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
