@@ -118,8 +118,8 @@ const experiences = [
   {
     title: "Lead Developer",
     company_name: "Zeneva",
-    icon: meta,
-    iconBg: "#383E56",
+    icon: "/planet/bime-portfolio-images/zeneva icon.png",
+    iconBg: "#ffffff",
     date: "Jan 2024 - Present",
     points: [
       "Multi-Platform Architecture: Engineered and launched Zeneva’s core ecosystem across three native platforms: Web (Next.js/React), Desktop (Tauri), and Mobile (PWA), standardizing shared state and UI patterns.",
