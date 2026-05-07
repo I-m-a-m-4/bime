@@ -1,3 +1,7 @@
+import React from "react";
+if (typeof window !== "undefined") {
+  window.__vite_plugin_react_preamble_installed__ = true;
+}
 import { Html, useProgress } from "@react-three/drei";
 
 const CanvasLoader = () => {
