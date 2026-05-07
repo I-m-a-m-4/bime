@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { projects, experiences } from "../constants";
 
 const MePage = () => {
+  const [showResume, setShowResume] = useState(false);
 
   return (
     <div className="bg-white min-h-screen text-zinc-900 font-sans selection:bg-zinc-200 relative overflow-x-hidden">
@@ -112,11 +113,9 @@ const MePage = () => {
             </div>
 
             <div className="flex items-center">
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-[12px] md:p-[15px] hover:px-[20px] text-zinc-600 hover:text-zinc-900 rounded-[15px] hover:bg-zinc-100/50 transition-all duration-300 flex items-center gap-2 font-medium"
+              <button
+                onClick={() => setShowResume(true)}
+                className="p-[12px] md:p-[15px] hover:px-[20px] text-zinc-600 hover:text-zinc-900 rounded-[15px] hover:bg-zinc-100/50 transition-all duration-300 flex items-center gap-2 font-medium cursor-pointer bg-transparent border-none outline-none"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +135,7 @@ const MePage = () => {
                   <path d="M16 17H8" />
                 </svg>
                 <span className="hidden md:inline">Resume</span>
-              </a>
+              </button>
             </div>
 
             <div className="h-5 w-[1px] bg-zinc-200 mx-1 md:mx-2"></div>
@@ -535,6 +534,180 @@ const MePage = () => {
           </div>
         </div>
       </main>
+
+      {/* Interactive Beautiful Resume Lightbox Modal */}
+      {showResume && (
+        <div className="fixed inset-0 z-[10000] bg-black/60 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-y-auto">
+          {/* Main Modal container */}
+          <div className="bg-white max-w-[54rem] w-full max-h-[85vh] overflow-y-auto rounded-[24px] shadow-2xl relative border border-zinc-100 flex flex-col p-6 sm:p-10 md:p-12 text-zinc-900 select-text">
+            
+            {/* Header / Actions Row */}
+            <div className="absolute top-6 right-6 flex items-center gap-4 z-20">
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText(`Bello Imam\nFrontend Developer | Full-Stack Engineer | Graphics Designer\nbelloimam@gmail.com\nLagos, Nigeria\nGitHub: github.com/i-m-a-m-\nLinkedIn: linkedin.com/in/imam-bello`);
+                  alert("Contact details copied to clipboard!");
+                }}
+                className="text-[11px] font-mono tracking-wider uppercase text-zinc-500 hover:text-zinc-800 bg-zinc-100 hover:bg-zinc-200/80 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
+                title="Copy Info"
+              >
+                Copy Info
+              </button>
+              <button 
+                onClick={() => setShowResume(false)} 
+                className="text-zinc-400 hover:text-zinc-800 p-1.5 rounded-full hover:bg-zinc-100 transition-colors cursor-pointer flex items-center justify-center"
+                title="Close"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <line x1="18" y1="6" x2="6" y2="18"/>
+                  <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+            </div>
+
+            {/* Document Content */}
+            <div className="flex flex-col text-left">
+              {/* Header section */}
+              <div className="flex flex-col mb-6">
+                <h2 className="text-[28px] sm:text-[36px] font-extrabold text-zinc-950 leading-tight tracking-tight font-display">
+                  Bello Imam
+                </h2>
+                <span className="text-zinc-600 font-semibold text-[13px] sm:text-[15px] uppercase tracking-wider mt-1.5">
+                  Frontend Developer | Full-Stack Engineer | Graphics Designer
+                </span>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-zinc-500 text-[13px] sm:text-[14px] mt-3 font-mono">
+                  <a href="mailto:belloimam@gmail.com" className="hover:text-zinc-800 transition-colors">belloimam@gmail.com</a>
+                  <span className="text-zinc-300">|</span>
+                  <span>Lagos, Nigeria</span>
+                  <span className="text-zinc-300">|</span>
+                  <a href="https://github.com/i-m-a-m-" target="_blank" rel="noreferrer" className="hover:text-zinc-800 transition-colors font-bold">GitHub: github.com/i-m-a-m-</a>
+                  <span className="text-zinc-300">|</span>
+                  <a href="https://linkedin.com/in/imam-bello" target="_blank" rel="noreferrer" className="hover:text-zinc-800 transition-colors font-bold">LinkedIn: linkedin.com/in/imam-bello</a>
+                </div>
+              </div>
+
+              <div className="h-[1px] bg-zinc-200 w-full mb-6"></div>
+
+              {/* Professional Summary */}
+              <div className="flex flex-col mb-8">
+                <h3 className="text-[12px] font-mono tracking-[0.2em] uppercase font-bold text-zinc-400 mb-2.5">
+                  Professional Summary
+                </h3>
+                <p className="text-zinc-700 text-[14px] sm:text-[15.5px] leading-relaxed">
+                  Dynamic and results-driven Frontend Developer with a strong foundation in building scalable, user-centric web applications. Expert in React and Next.js, with a proven track record of delivering high-impact projects ranging from AI-powered SaaS platforms to complex e-commerce solutions. Passionate about integrating AI technologies to solve real-world business challenges and creating seamless digital experiences through a combination of technical excellence and creative design.
+                </p>
+              </div>
+
+              {/* Core Skills */}
+              <div className="flex flex-col mb-8">
+                <h3 className="text-[12px] font-mono tracking-[0.2em] uppercase font-bold text-zinc-400 mb-4">
+                  Core Skills
+                </h3>
+                <div className="overflow-x-auto border border-zinc-200/60 rounded-xl">
+                  <table className="min-w-full divide-y divide-zinc-200/60 text-[13px] sm:text-[14px]">
+                    <thead className="bg-zinc-50">
+                      <tr>
+                        <th className="px-6 py-3 text-left font-mono text-[10px] font-bold text-zinc-400 uppercase tracking-wider w-1/3">Category</th>
+                        <th className="px-6 py-3 text-left font-mono text-[10px] font-bold text-zinc-400 uppercase tracking-wider w-2/3">Technologies & Tools</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-zinc-100">
+                      <tr>
+                        <td className="px-6 py-3.5 font-semibold text-zinc-800">Frontend</td>
+                        <td className="px-6 py-3.5 text-zinc-600">React, Next.js, JavaScript (ES+), TypeScript, HTML, CSS, Tailwind CSS</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-3.5 font-semibold text-zinc-800">Backend & Database</td>
+                        <td className="px-6 py-3.5 text-zinc-600">Firebase, Node.js, RESTful APIs</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-3.5 font-semibold text-zinc-800">Tools & Platforms</td>
+                        <td className="px-6 py-3.5 text-zinc-600">Vercel, Git/GitHub, PWA, AI, SEO, Analytics</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-3.5 font-semibold text-zinc-800">Design Specializations</td>
+                        <td className="px-6 py-3.5 text-zinc-600">Graphics Design, UI/UX Principles, Figma</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-3.5 font-semibold text-zinc-800">Technologies & Tools</td>
+                        <td className="px-6 py-3.5 text-zinc-600">AI Integration, SaaS Development, E-commerce, Inventory Management Systems</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Key Projects */}
+              <div className="flex flex-col mb-8">
+                <h3 className="text-[12px] font-mono tracking-[0.2em] uppercase font-bold text-zinc-400 mb-4">
+                  Key Projects
+                </h3>
+                
+                {/* Zeneva */}
+                <div className="flex flex-col mb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+                    <h4 className="font-bold text-[16px] sm:text-[18px] text-zinc-950">Zeneva ‒ Business Operating System</h4>
+                    <span className="text-[12px] sm:text-[13px] text-zinc-500 font-mono">Lead Developer | <a href="https://zeneva.vercel.app" target="_blank" rel="noreferrer" className="hover:underline text-zinc-800">zeneva.vercel.app</a></span>
+                  </div>
+                  <ul className="list-disc list-outside pl-5 text-zinc-700 text-[13.5px] sm:text-[14.5px] space-y-1.5 leading-relaxed">
+                    <li>Engineered an all-in-one SaaS platform for retail businesses, integrating POS, inventory management, CRM, and AI forecasting.</li>
+                    <li>Developed Zen AI, an intelligent engine that predicts demand, prevents stockouts, and identifies revenue opportunities.</li>
+                    <li>Implemented offline capabilities using PWA technology to ensure uninterrupted business operations.</li>
+                    <li>Built a customizable e-commerce storefront for SMEs to scale their businesses online seamlessly.</li>
+                  </ul>
+                </div>
+
+                {/* Selected Portfolio Projects */}
+                <div className="flex flex-col">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2.5">
+                    <h4 className="font-bold text-[16px] sm:text-[18px] text-zinc-950">Selected Portfolio Projects</h4>
+                    <span className="text-[12px] sm:text-[13px] text-zinc-500 font-mono">Full-Stack Developer</span>
+                  </div>
+                  <ul className="list-disc list-outside pl-5 text-zinc-700 text-[13.5px] sm:text-[14.5px] space-y-2 leading-relaxed">
+                    <li><strong className="text-zinc-950">Alansororphan Care</strong>: Developed a comprehensive NGO website for a charity platform (<a href="https://alansororphancare.com" target="_blank" rel="noreferrer" className="hover:underline font-bold text-zinc-800">alansororphancare.com</a>).</li>
+                    <li><strong className="text-zinc-950">Scale with Olaiya</strong>: Built a full-stack personal branding and e-commerce platform with a custom admin dashboard using Firebase (<a href="https://scalewitholaiya.com" target="_blank" rel="noreferrer" className="hover:underline font-bold text-zinc-800">scalewitholaiya.com</a>).</li>
+                    <li><strong className="text-zinc-950">Tech Ink</strong>: Launched an AI-powered news platform focused on data-driven analysis and tech media (<a href="https://tech-ink.vercel.app" target="_blank" rel="noreferrer" className="hover:underline font-bold text-zinc-800">tech-ink.vercel.app</a>).</li>
+                    <li><strong className="text-zinc-950">Skincare NG</strong>: Engineered a comprehensive healthcare e-commerce platform integrating professional services (<a href="https://skincareng.com" target="_blank" rel="noreferrer" className="hover:underline font-bold text-zinc-800">skincareng.com</a>).</li>
+                    <li><strong className="text-zinc-950">ORELIS EMR</strong>: Created a futuristic Electronic Medical Record (EMR) system for doctors (<a href="https://orelis-med.vercel.app" target="_blank" rel="noreferrer" className="hover:underline font-bold text-zinc-800">orelis-med.vercel.app</a>).</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Professional Experience */}
+              <div className="flex flex-col">
+                <h3 className="text-[12px] font-mono tracking-[0.2em] uppercase font-bold text-zinc-400 mb-4">
+                  Professional Experience
+                </h3>
+                
+                {/* Independent Full-Stack */}
+                <div className="flex flex-col mb-5">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+                    <h4 className="font-bold text-[16px] sm:text-[17px] text-zinc-950">Independent Full-Stack Developer</h4>
+                    <span className="text-[12px] sm:text-[13px] text-zinc-500 font-mono">January ‒ Present</span>
+                  </div>
+                  <ul className="list-disc list-outside pl-5 text-zinc-700 text-[13.5px] sm:text-[14.5px] space-y-1.5 leading-relaxed">
+                    <li>Architected and deployed multiple high-performance web applications for diverse industries including Healthcare, Education, and E-commerce.</li>
+                    <li>Collaborated with clients to translate business requirements into technical roadmaps and scalable digital products.</li>
+                    <li>Optimized web performance and SEO, resulting in improved user engagement and search rankings for client platforms.</li>
+                  </ul>
+                </div>
+
+                {/* Graphics Designer */}
+                <div className="flex flex-col">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+                    <h4 className="font-bold text-[16px] sm:text-[17px] text-zinc-950">Graphics Designer & Brand Strategist</h4>
+                    <span className="text-[12px] sm:text-[13px] text-zinc-500 font-mono">Ongoing</span>
+                  </div>
+                  <ul className="list-disc list-outside pl-5 text-zinc-700 text-[13.5px] sm:text-[14.5px] space-y-1.5 leading-relaxed">
+                    <li>Crafted visual identities and marketing materials for various startups, ensuring brand consistency across digital and print media.</li>
+                    <li>Leveraged design expertise to enhance UI/UX of developed web applications, focusing on intuitive user journeys.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
