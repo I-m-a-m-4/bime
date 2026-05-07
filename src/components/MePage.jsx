@@ -267,6 +267,97 @@ const MePage = () => {
           </div>
         </div>
 
+        {/* Here's What I've Been Up To Section */}
+        <div className="w-full max-w-[53rem] p-6 flex flex-col py-[40px] px-[1.5rem] md:px-[8rem] items-start gap-[25px]">
+          <h2 className="text-[25px] md:text-[32px] font-bold tracking-[-.03em] leading-[110%] text-zinc-900 border-b-2 border-zinc-100 pb-2 w-full font-display">
+            Here's What I've Been Up To.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mt-4">
+            {[
+              {
+                title: "Pxxl App",
+                desc: "Enterprise-grade cloud deployment platform enabling instant deployment of websites, APIs, and databases with zero configuration.",
+                link: "https://pxxl.app",
+                tag: "Cloud Deployment"
+              },
+              {
+                title: "Olamide's Tour Website",
+                desc: "Official site for Nigerian Musician: Olamide (Badoo), featuring tour schedules, ticket purchases, and event information.",
+                link: "#",
+                tag: "Web App / Entertainment"
+              },
+              {
+                title: "Uncutxtra Awards Voting",
+                desc: "Official voting platform for UNCUTXTRA Award Night 4.0, handling secure live real-time voter verification.",
+                link: "#",
+                tag: "Live Voting Platform"
+              },
+              {
+                title: "EmojiDB",
+                desc: "A lightweight, secure database engine that encrypts your data and encodes it into emojis.",
+                link: "#",
+                tag: "Custom Database"
+              }
+            ].map((proj, idx) => (
+              <div
+                key={idx}
+                className="group p-6 rounded-[24px] border border-zinc-200 hover:border-zinc-400 bg-white relative transition-all duration-300 hover:scale-[1.02] cursor-pointer shadow-sm flex flex-col justify-between h-[220px]"
+                onClick={() => proj.link !== "#" && window.open(proj.link, "_blank")}
+              >
+                <div>
+                  <div className="flex justify-between items-start mb-3">
+                    <span className="text-[12px] font-semibold tracking-wider text-zinc-400 uppercase">
+                      {proj.tag}
+                    </span>
+                    {proj.link !== "#" && (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-zinc-400 group-hover:text-zinc-800 transition-colors"
+                      >
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
+                    )}
+                  </div>
+                  <h3 className="text-[20px] font-extrabold tracking-tight text-zinc-900 group-hover:text-black mb-2 font-display">
+                    {proj.title}
+                  </h3>
+                  <p className="text-[14px] leading-[1.5] text-zinc-500 line-clamp-3">
+                    {proj.desc}
+                  </p>
+                </div>
+                <div className="flex items-center gap-1 text-[13px] font-bold text-zinc-400 group-hover:text-zinc-900 transition-colors mt-4">
+                  <span>View Project</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transform group-hover:translate-x-1 transition-transform"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Tech Stack Infinite Marquee */}
         <div className="w-full overflow-hidden border-t border-zinc-100 py-6 bg-zinc-50/30">
           <div className="animate-scroll gap-12 items-center">
