@@ -6,58 +6,58 @@ const BlogPage = () => {
 
   const blogPosts = [
     {
-      title: "Pxxl App | Best Alternative to Vercel, Render, Netlify & Railway",
+      title: "Building Zeneva: Reimagining the Modern Business Operating System",
       date: "12/20/2025",
-      readTime: "5 min",
-      description: "Explore Pxxl App—the game-changing hosting platform that offers a powerful, cost-effective alternative to standard cloud providers.",
-      link: "https://techspotlight1234.medium.com/pxxl-app-best-alternative-to-vercel-render-netlify-railway-8df3ac805e64?source=rss-57513fddee4d------2",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop",
-      tags: ["render-alternative", "railway-alternative", "vercel-alternative"]
+      readTime: "6 min",
+      description: "An insider look into how I engineered Zeneva—an all-in-one SaaS platform integrating real-time POS, live inventory management, and business analytics to help retail businesses scale.",
+      link: "https://zeneva.vercel.app",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
+      tags: ["zeneva", "saas-development", "react-nextjs"]
     },
     {
-      title: "The Best Nigerian and African Alternative to Vercel Render and Netlify : Pxxl App",
-      date: "10/16/2025",
+      title: "How AI is Revolutionizing Inventory Forecasting for SMEs",
+      date: "11/15/2025",
       readTime: "5 min",
-      description: "A deep dive into why Pxxl App is leading the charge as the premier hosting solution optimized for developers across Africa.",
-      link: "https://techspotlight1234.medium.com/the-best-nigerian-and-african-alternative-to-vercel-render-and-netlify-pxxl-app-e22efb936805?source=rss-57513fddee4d------2",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop",
-      tags: ["web-hosting", "vercel", "pxxl"]
-    },
-    {
-      title: "Pxxl App: The Best Nigerian and African Alternative to Vercel Render and Netlify",
-      date: "10/16/2025",
-      readTime: "5 min",
-      description: "An in-depth review of features, deployment speed, and pricing comparison between Pxxl App and mainstream hosting providers.",
-      link: "https://techspotlight1234.medium.com/pxxl-app-the-best-nigerian-and-african-alternative-to-vercel-render-and-netlify-c8157466bad7?source=rss-57513fddee4d------2",
+      description: "A deep dive into Zen AI, the intelligent forecasting engine built into Zeneva to help retail shop owners predict product demand, prevent stockouts, and optimize overall cash flow.",
+      link: "https://github.com/i-m-a-m-",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop",
-      tags: ["pxxl", "provider", "hosting"]
+      tags: ["zen-ai", "machine-learning", "inventory-management"]
     },
     {
-      title: "Meet Bello Imam: The Nigerian Tech Prodigy Shaping the Future",
-      date: "4/30/2025",
+      title: "Implementing Offline-First PWA Capabilities in Retail Web Applications",
+      date: "10/02/2025",
       readTime: "5 min",
-      description: "An inspiring look into Bello Imam's path, highlighting his contributions to software engineering, cloud architecture, and design.",
-      link: "https://techspotlight1234.medium.com/meet-robinson-honour-the-nigerian-tech-prodigy-shaping-the-future-de8d41ca8313?source=rss-57513fddee4d------2",
+      description: "Exploring the challenges and architectural strategies for implementing offline caching, local data persistence, and background sync to ensure zero POS downtime for businesses.",
+      link: "https://github.com/i-m-a-m-",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop",
+      tags: ["offline-first", "progressive-web-apps", "web-performance"]
+    },
+    {
+      title: "Designing Seamless Multi-Tenant E-commerce Architectures",
+      date: "08/24/2025",
+      readTime: "6 min",
+      description: "Best practices and architectural decisions behind launching custom, secure, and fast digital storefronts for hundreds of online shops running on a shared, robust backend database.",
+      link: "https://github.com/i-m-a-m-",
       image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=600&auto=format&fit=crop",
-      tags: ["codewithimam", "bello", "imam"]
+      tags: ["saas-architecture", "multi-tenant", "firebase"]
     },
     {
-      title: "Bello Imam : Tech Prodigy",
-      date: "10/12/2024",
+      title: "Crafting Breathtakingly Beautiful Interfaces: The Art of UI/UX",
+      date: "06/12/2025",
       readTime: "5 min",
-      description: "A detailed profile of a master developer breaking barriers and setting new benchmarks in the global tech ecosystem.",
-      link: "https://techspotlight1234.medium.com/robinson-honour-tech-prodigy-2a04615a0960?source=rss-57513fddee4d------2",
+      description: "My personal principles of combining frontend engineering excellence with premium design systems, smooth gradients, and interactive micro-animations to create products users love.",
+      link: "https://github.com/i-m-a-m-",
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop",
-      tags: ["programmer", "saas", "full-stack"]
+      tags: ["ui-ux-design", "css-animation", "tailwindcss"]
     },
     {
-      title: "Bello Imam: The Next Tech Prodigy",
-      date: "10/10/2024",
+      title: "Bello Imam: Engineering Scalable Full-Stack Web Experiences",
+      date: "04/05/2025",
       readTime: "5 min",
-      description: "Shining a spotlight on Imam's revolutionary ideas and software craftsmanship that are inspiring the next generation of engineers.",
-      link: "https://techspotlight1234.medium.com/robinson-honour-amadi-the-next-tech-prodigy-99644ed3e7be?source=rss-57513fddee4d------2",
+      description: "A reflective journey of building robust software solutions for Healthcare, NGOs, and Personal Branding platforms, focusing on clean code, solid architectures, and user-centric flows.",
+      link: "https://github.com/i-m-a-m-",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop",
-      tags: ["tech", "programmer", "bello-imam"]
+      tags: ["clean-code", "full-stack", "software-craftsmanship"]
     }
   ];
 
