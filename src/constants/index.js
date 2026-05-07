@@ -171,14 +171,14 @@ const projects = [
   {
     name: "Zeneva",
     description:
-      "An all-in-one SaaS platform for retail businesses, integrating POS, inventory management, CRM, and Zen AI demand forecasting to prevent stockouts and optimize revenue.",
+      "All-in-one business operating system with POS, inventory, CRM, and Zen AI demand forecasting. Built using Next.js and compiled into premium cross-platform Desktop & Mobile apps using Tauri.",
     tags: [
       {
-        name: "react",
+        name: "nextjs",
         color: "blue-text-gradient",
       },
       {
-        name: "nextjs",
+        name: "tauri",
         color: "green-text-gradient",
       },
       {
@@ -187,7 +187,7 @@ const projects = [
       },
     ],
     image: carrent,
-    source_code_link: "https://zeneva.vercel.app",
+    source_code_link: "https://zeneva.space",
   },
   {
     name: "NexusBiz",
