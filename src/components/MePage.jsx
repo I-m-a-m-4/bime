@@ -413,15 +413,23 @@ const MePage = () => {
 
         {/* How Can I Help? Banner Section */}
         <div className="w-full max-w-[53rem] px-6 mt-16 select-none">
-          <div className="w-full rounded-[32px] overflow-hidden bg-zinc-950 py-12 px-6 flex flex-col items-center justify-center text-center relative shadow-xl border border-zinc-900">
-            {/* Abstract Background Accents */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-zinc-950 via-zinc-900 to-zinc-950 opacity-40"></div>
+          <div
+            className="w-full rounded-[32px] overflow-hidden bg-black py-12 px-6 flex flex-col items-center justify-center text-center relative shadow-xl border border-zinc-900"
+            style={{
+              backgroundImage: 'url("/me page doddle image.webp")',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            {/* Sleek Dark Overlay to ensure maximum contrast and premium aesthetics */}
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]"></div>
             
             <div className="relative z-10 flex flex-col items-center">
               <h2 className="text-[28px] md:text-[36px] font-bold text-white mb-2 font-display">
                 How Can I Help?
               </h2>
-              <p className="text-zinc-400 text-[14px] md:text-[15px] mb-8">
+              <p className="text-zinc-300 text-[14px] md:text-[15px] mb-8">
                 Let's turn your vision into something amazing.
               </p>
               
