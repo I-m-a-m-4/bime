@@ -1,13 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { projects } from "../constants";
 
 const MePage = () => {
-  const projects = [
-    { title: "Pxxl App", img: "/pxxl.png", link: "https://pxxl.app" },
-    { title: "Olamide's Tour Website", img: "/olamide.png", link: "#" },
-    { title: "Uncutxtra Awards Voting", img: "/uncutxtra.png", link: "#" },
-    { title: "EmojiDB", img: "/emojidb.png", link: "#" },
-  ];
 
   return (
     <div className="bg-white min-h-screen text-zinc-900 font-sans selection:bg-zinc-200 relative overflow-x-hidden">
@@ -183,12 +178,17 @@ const MePage = () => {
               <div
                 key={`p1-${idx}`}
                 className="flex min-w-[300px] md:min-w-[400px] rounded-[20px] overflow-hidden border border-zinc-200 bg-white relative transition-all hover:scale-[1.02] cursor-pointer shadow-sm p-4 md:p-6"
-                onClick={() => proj.link !== "#" && window.open(proj.link, "_blank")}
+                onClick={() => proj.source_code_link && window.open(proj.source_code_link, "_blank")}
               >
                 <div className="w-full h-[200px] md:h-[250px] rounded-[10px] overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/20 z-10"></div>
+                  <img
+                    src={proj.image}
+                    alt={proj.name}
+                    className="absolute inset-0 w-full h-full object-cover rounded-[10px]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/30 z-10"></div>
                   <div className="absolute bottom-4 left-4 z-20 text-white font-bold drop-shadow-md">
-                    {proj.title}
+                    {proj.name}
                   </div>
                   {/* Decorative Rivets */}
                   <div className="absolute w-2 h-2 top-3 left-3 rounded-full bg-zinc-300/80 z-20 shadow-inner"></div>
@@ -203,12 +203,17 @@ const MePage = () => {
               <div
                 key={`p2-${idx}`}
                 className="flex min-w-[300px] md:min-w-[400px] rounded-[20px] overflow-hidden border border-zinc-200 bg-white relative transition-all hover:scale-[1.02] cursor-pointer shadow-sm p-4 md:p-6"
-                onClick={() => proj.link !== "#" && window.open(proj.link, "_blank")}
+                onClick={() => proj.source_code_link && window.open(proj.source_code_link, "_blank")}
               >
                 <div className="w-full h-[200px] md:h-[250px] rounded-[10px] overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/20 z-10"></div>
+                  <img
+                    src={proj.image}
+                    alt={proj.name}
+                    className="absolute inset-0 w-full h-full object-cover rounded-[10px]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/30 z-10"></div>
                   <div className="absolute bottom-4 left-4 z-20 text-white font-bold drop-shadow-md">
-                    {proj.title}
+                    {proj.name}
                   </div>
                   {/* Decorative Rivets */}
                   <div className="absolute w-2 h-2 top-3 left-3 rounded-full bg-zinc-300/80 z-20 shadow-inner"></div>
@@ -273,43 +278,18 @@ const MePage = () => {
             Here's What I've Been Up To.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mt-4">
-            {[
-              {
-                title: "Pxxl App",
-                desc: "Enterprise-grade cloud deployment platform enabling instant deployment of websites, APIs, and databases with zero configuration.",
-                link: "https://pxxl.app",
-                tag: "Cloud Deployment"
-              },
-              {
-                title: "Olamide's Tour Website",
-                desc: "Official site for Nigerian Musician: Olamide (Badoo), featuring tour schedules, ticket purchases, and event information.",
-                link: "#",
-                tag: "Web App / Entertainment"
-              },
-              {
-                title: "Uncutxtra Awards Voting",
-                desc: "Official voting platform for UNCUTXTRA Award Night 4.0, handling secure live real-time voter verification.",
-                link: "#",
-                tag: "Live Voting Platform"
-              },
-              {
-                title: "EmojiDB",
-                desc: "A lightweight, secure database engine that encrypts your data and encodes it into emojis.",
-                link: "#",
-                tag: "Custom Database"
-              }
-            ].map((proj, idx) => (
+            {projects.map((proj, idx) => (
               <div
                 key={idx}
-                className="group p-6 rounded-[24px] border border-zinc-200 hover:border-zinc-400 bg-white relative transition-all duration-300 hover:scale-[1.02] cursor-pointer shadow-sm flex flex-col justify-between h-[220px]"
-                onClick={() => proj.link !== "#" && window.open(proj.link, "_blank")}
+                className="group p-6 rounded-[24px] border border-zinc-200 hover:border-zinc-400 bg-white relative transition-all duration-300 hover:scale-[1.02] cursor-pointer shadow-sm flex flex-col justify-between min-h-[220px]"
+                onClick={() => proj.source_code_link && window.open(proj.source_code_link, "_blank")}
               >
                 <div>
                   <div className="flex justify-between items-start mb-3">
                     <span className="text-[12px] font-semibold tracking-wider text-zinc-400 uppercase">
-                      {proj.tag}
+                      {proj.tags[0]?.name || "Web Application"}
                     </span>
-                    {proj.link !== "#" && (
+                    {proj.source_code_link && (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -329,10 +309,10 @@ const MePage = () => {
                     )}
                   </div>
                   <h3 className="text-[20px] font-extrabold tracking-tight text-zinc-900 group-hover:text-black mb-2 font-display">
-                    {proj.title}
+                    {proj.name}
                   </h3>
-                  <p className="text-[14px] leading-[1.5] text-zinc-500 line-clamp-3">
-                    {proj.desc}
+                  <p className="text-[14px] leading-[1.5] text-zinc-500">
+                    {proj.description}
                   </p>
                 </div>
                 <div className="flex items-center gap-1 text-[13px] font-bold text-zinc-400 group-hover:text-zinc-900 transition-colors mt-4">
