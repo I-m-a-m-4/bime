@@ -2,8 +2,31 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const MePage = () => {
+  const projects = [
+    { title: "Pxxl App", img: "/pxxl.png", link: "https://pxxl.app" },
+    { title: "Olamide's Tour Website", img: "/olamide.png", link: "#" },
+    { title: "Uncutxtra Awards Voting", img: "/uncutxtra.png", link: "#" },
+    { title: "EmojiDB", img: "/emojidb.png", link: "#" },
+  ];
+
   return (
-    <div className="bg-white min-h-screen text-zinc-900 font-sans selection:bg-zinc-200 relative overflow-hidden">
+    <div className="bg-white min-h-screen text-zinc-900 font-sans selection:bg-zinc-200 relative overflow-x-hidden">
+      {/* CSS Keyframes for infinite scrolling marquees */}
+      <style>{`
+        @keyframes scroll-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+          display: flex;
+          width: max-content;
+          animation: scroll-left 40s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       {/* Decorative vertical grid lines */}
       <div className="fixed top-0 bottom-0 left-0 right-0 w-full pointer-events-none z-0 flex justify-center">
         <div className="relative w-full max-w-[53rem] h-full">
@@ -12,10 +35,10 @@ const MePage = () => {
         </div>
       </div>
 
-      {/* Modern Glassmorphic Header / Navbar */}
+      {/* Glassmorphic Navbar */}
       <header className="fixed top-[10px] md:top-[25px] w-full z-50 flex justify-center p-4">
-        <div className="bg-white/80 backdrop-blur-md rounded-[20px] border border-zinc-200/60 shadow-sm transition-all duration-300">
-          <nav className="flex items-center gap-1 p-[6px] relative z-10 text-sm">
+        <div className="bg-[#ffffff80] backdrop-blur-md rounded-[20px] border border-zinc-200/60 shadow-sm">
+          <nav className="flex items-center gap-1 p-[6px] text-sm">
             <div className="flex items-center">
               <Link
                 to="/"
@@ -125,10 +148,10 @@ const MePage = () => {
         </div>
       </header>
 
-      {/* Main Content Container */}
+      {/* Main Container */}
       <main className="flex flex-col relative items-center mx-auto z-10">
-        <div className="w-full max-w-[53rem] p-6 flex flex-col pt-[150px] md:pt-[188px] pb-[4rem] px-[1.5rem] md:px-[8rem] items-start gap-[25px]">
-          {/* Circular Avatar */}
+        {/* Hero Section */}
+        <div className="w-full max-w-[53rem] p-6 flex flex-col pt-[150px] md:pt-[188px] pb-[2rem] px-[1.5rem] md:px-[8rem] items-start gap-[25px]">
           <div className="relative group">
             <img
               alt="Profile picture"
@@ -137,19 +160,134 @@ const MePage = () => {
             />
           </div>
 
-          {/* Heading Text */}
           <div className="text-start">
             <h1 className="text-[32px] md:text-[46px] font-extrabold tracking-[-.04em] leading-[110%] text-zinc-950 mb-2 font-display">
-              Hey, I'm <span className="text-zinc-800">Bello Imam.</span>
+              Hey, I'm <span className="text-zinc-800 font-black">Bello Imam.</span>
             </h1>
             <h2 className="text-[28px] md:text-[42px] font-bold tracking-[-.03em] leading-[110%] text-zinc-600 mb-6 font-display">
               Full-Stack Developer
             </h2>
-            <p className="text-[17px] md:text-[18px] leading-[1.6] text-zinc-600 max-w-[36rem]">
+            <p className="text-[17px] md:text-[18px] leading-[1.6] text-zinc-500 max-w-[36rem]">
               Creating innovative solutions and captivating designs.
               <br />
               Visionary developer building next-gen multi-platform applications.
             </p>
+          </div>
+        </div>
+
+        {/* Project Infinite Marquee */}
+        <div className="w-full overflow-hidden border-y border-zinc-100 py-4 my-8 bg-zinc-50/50">
+          <div className="animate-scroll gap-6 px-4">
+            {/* First Set of Projects */}
+            {projects.map((proj, idx) => (
+              <div
+                key={`p1-${idx}`}
+                className="flex min-w-[300px] md:min-w-[400px] rounded-[20px] overflow-hidden border border-zinc-200 bg-white relative transition-all hover:scale-[1.02] cursor-pointer shadow-sm p-4 md:p-6"
+                onClick={() => proj.link !== "#" && window.open(proj.link, "_blank")}
+              >
+                <div className="w-full h-[200px] md:h-[250px] rounded-[10px] overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/20 z-10"></div>
+                  <div className="absolute bottom-4 left-4 z-20 text-white font-bold drop-shadow-md">
+                    {proj.title}
+                  </div>
+                  {/* Decorative Rivets */}
+                  <div className="absolute w-2 h-2 top-3 left-3 rounded-full bg-zinc-300/80 z-20 shadow-inner"></div>
+                  <div className="absolute w-2 h-2 bottom-3 left-3 rounded-full bg-zinc-300/80 z-20 shadow-inner"></div>
+                  <div className="absolute w-2 h-2 top-3 right-3 rounded-full bg-zinc-300/80 z-20 shadow-inner"></div>
+                  <div className="absolute w-2 h-2 bottom-3 right-3 rounded-full bg-zinc-300/80 z-20 shadow-inner"></div>
+                </div>
+              </div>
+            ))}
+            {/* Duplicate Set for Seamless Loop */}
+            {projects.map((proj, idx) => (
+              <div
+                key={`p2-${idx}`}
+                className="flex min-w-[300px] md:min-w-[400px] rounded-[20px] overflow-hidden border border-zinc-200 bg-white relative transition-all hover:scale-[1.02] cursor-pointer shadow-sm p-4 md:p-6"
+                onClick={() => proj.link !== "#" && window.open(proj.link, "_blank")}
+              >
+                <div className="w-full h-[200px] md:h-[250px] rounded-[10px] overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/20 z-10"></div>
+                  <div className="absolute bottom-4 left-4 z-20 text-white font-bold drop-shadow-md">
+                    {proj.title}
+                  </div>
+                  {/* Decorative Rivets */}
+                  <div className="absolute w-2 h-2 top-3 left-3 rounded-full bg-zinc-300/80 z-20 shadow-inner"></div>
+                  <div className="absolute w-2 h-2 bottom-3 left-3 rounded-full bg-zinc-300/80 z-20 shadow-inner"></div>
+                  <div className="absolute w-2 h-2 top-3 right-3 rounded-full bg-zinc-300/80 z-20 shadow-inner"></div>
+                  <div className="absolute w-2 h-2 bottom-3 right-3 rounded-full bg-zinc-300/80 z-20 shadow-inner"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* About Section */}
+        <div className="w-full max-w-[53rem] p-6 flex flex-col py-[40px] px-[1.5rem] md:px-[8rem] items-start gap-[25px]">
+          <h2 className="text-[25px] md:text-[32px] font-bold tracking-[-.03em] leading-[110%] text-zinc-900 border-b-2 border-zinc-100 pb-2 w-full">
+            About Me
+          </h2>
+          <div className="flex flex-col gap-6 text-[16px] leading-[1.6] text-zinc-600">
+            <p>
+              I specialize in crafting high-performance, robust, and scalable systems with captivating designs and exceptional user experiences.
+            </p>
+            <p>
+              With multiple years of active engineering experience, my background spans advanced multi-platform application design, web architectures, and high-performance offline synchronization systems.
+            </p>
+            <p>
+              As the lead software architect behind modern cloud systems and local-first commercial synchronization layers, I focus on removing complexities and engineering reliable, distributed, and fast software.
+            </p>
+
+            {/* Rotating Photo Stack Frame */}
+            <div className="relative w-full h-[280px] mt-8 group flex justify-center items-center">
+              <div className="absolute left-[15%] md:left-[25%] bg-white p-2 -rotate-12 shadow-lg rounded-lg border border-zinc-100 overflow-hidden transition-all duration-500 group-hover:-rotate-6 group-hover:-translate-x-4 group-hover:scale-105">
+                <div className="w-[160px] h-[160px] md:w-[180px] md:h-[180px] bg-zinc-50 rounded-lg overflow-hidden flex items-center justify-center">
+                  <img
+                    alt="Bime Logo"
+                    src="/bime.png"
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <span className="text-[11px] flex justify-center py-1 italic text-zinc-400 w-full text-center">
+                  @bime_dev
+                </span>
+              </div>
+              <div className="absolute right-[15%] md:right-[25%] bg-white p-2 rotate-12 shadow-lg rounded-lg border border-zinc-100 overflow-hidden transition-all duration-500 group-hover:rotate-6 group-hover:translate-x-4 group-hover:scale-105">
+                <div className="w-[160px] h-[160px] md:w-[180px] md:h-[180px] bg-zinc-50 rounded-lg overflow-hidden flex items-center justify-center">
+                  <img
+                    alt="Bello Avatar"
+                    src="/bime.png"
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <span className="text-[11px] flex justify-center py-1 italic text-zinc-400 w-full text-center">
+                  @imam-bello
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Tech Stack Infinite Marquee */}
+        <div className="w-full overflow-hidden border-t border-zinc-100 py-6 bg-zinc-50/30">
+          <div className="animate-scroll gap-12 items-center">
+            {/* Tech Badges Loop 1 */}
+            {["React", "Next.js", "Tauri", "Node.js", "TailwindCSS", "JavaScript", "HTML5", "CSS3", "Git"].map((tech, idx) => (
+              <span
+                key={`t1-${idx}`}
+                className="text-zinc-400 hover:text-zinc-900 font-extrabold text-[16px] md:text-[20px] uppercase tracking-wider transition-colors cursor-default whitespace-nowrap mx-4"
+              >
+                // {tech}
+              </span>
+            ))}
+            {/* Duplicate for Seamless Loop */}
+            {["React", "Next.js", "Tauri", "Node.js", "TailwindCSS", "JavaScript", "HTML5", "CSS3", "Git"].map((tech, idx) => (
+              <span
+                key={`t2-${idx}`}
+                className="text-zinc-400 hover:text-zinc-900 font-extrabold text-[16px] md:text-[20px] uppercase tracking-wider transition-colors cursor-default whitespace-nowrap mx-4"
+              >
+                // {tech}
+              </span>
+            ))}
           </div>
         </div>
       </main>
