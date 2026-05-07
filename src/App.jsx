@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, MePage } from "./components";
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, MePage, BlogPage } from "./components";
 
 const App = () => {
   return (
@@ -24,6 +24,7 @@ const App = () => {
           </div>
         } />
         <Route path="/me" element={<MePage />} />
+        <Route path="/blog" element={<BlogPage />} />
       </Routes>
     </BrowserRouter>
   );

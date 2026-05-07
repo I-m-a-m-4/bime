@@ -9,6 +9,7 @@ import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import MePage from "./MePage";
+import BlogPage from "./BlogPage";
 
 
 export {
@@ -22,6 +23,7 @@ export {
   Contact,
   CanvasLoader,
   MePage,
+  BlogPage,
   EarthCanvas, 
   BallCanvas, 
   ComputersCanvas, 
