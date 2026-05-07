@@ -212,7 +212,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: "/planet/bime-portfolio-images/zeneva dashboard ui.png",
     source_code_link: "https://zeneva.space",
   },
   {
@@ -233,7 +233,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: "/planet/bime-portfolio-images/alansororphancare.png",
     source_code_link: "https://nexusbiz.vercel.app",
   },
   {
@@ -254,7 +254,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: "/planet/bime-portfolio-images/scalewitholaiya hero section.png",
     source_code_link: "https://scalewitholaiya.com",
   },
   {
@@ -275,7 +275,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: "/planet/bime-portfolio-images/tech ink hero section.png",
     source_code_link: "https://tech-ink.vercel.app",
   },
   {
@@ -296,7 +296,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: "/planet/bime-portfolio-images/skincare365ng hero section.png",
     source_code_link: "https://skincareng.com",
   },
   {
@@ -317,7 +317,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: "/planet/bime-portfolio-images/orelis ui.png",
     source_code_link: "https://orelis-med.vercel.app",
   },
 ];
