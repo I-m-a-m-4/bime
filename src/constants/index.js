@@ -131,8 +131,8 @@ const experiences = [
   {
     title: "Full-Stack Developer",
     company_name: "Skincare365ng",
-    icon: shopify,
-    iconBg: "#E6DEDD",
+    icon: "/planet/bime-portfolio-images/skincare365ng icon.png",
+    iconBg: "#ffffff",
     date: "Jun 2024 - Present",
     points: [
       "Engineered a robust, highly responsive healthcare e-commerce platform integrating custom professional skincare consultation services.",
@@ -143,8 +143,8 @@ const experiences = [
   {
     title: "Full-Stack Developer",
     company_name: "Orelis EMR",
-    icon: starbucks,
-    iconBg: "#383E56",
+    icon: "/planet/bime-portfolio-images/orelis icon.png",
+    iconBg: "#ffffff",
     date: "Aug 2024 - Dec 2024",
     points: [
       "Designed and launched a futuristic Electronic Medical Record (EMR) system to streamline patient diagnosis, tracking, and medical records.",
@@ -155,8 +155,8 @@ const experiences = [
   {
     title: "Lead Developer & Full-Stack Engineer",
     company_name: "Tech-Ink",
-    icon: tesla,
-    iconBg: "#E6DEDD",
+    icon: "/planet/bime-portfolio-images/tech-ink icon.svg",
+    iconBg: "#ffffff",
     date: "Nov 2024 - Present",
     points: [
       "Architected and launched an AI-powered technology news and data-driven analysis platform.",
