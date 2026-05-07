@@ -182,16 +182,28 @@ const Contact = () => {
       {/* Interactive Me Page Transition CTA Section */}
       <div className="w-full mt-20 flex flex-col items-center">
         <div
-          className="relative group w-full rounded-[32px] p-[1.5px] bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 hover:from-white hover:via-zinc-400 hover:to-white transition-all duration-700 shadow-2xl cursor-pointer overflow-hidden select-none"
+          className="relative group w-full rounded-[32px] p-[1.5px] cursor-pointer select-none"
           onClick={handleExploreMe}
         >
-          {/* Background Ambient Tints */}
-          <div className="absolute inset-0 opacity-20 bg-gradient-to-tr from-zinc-800 to-zinc-950 group-hover:scale-105 transition-transform duration-700"></div>
+          {/* Back Glowing Aura (Smooth transition blur) */}
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 rounded-[32px] opacity-0 group-hover:opacity-50 blur-2xl transition-all duration-700 group-hover:duration-500"></div>
+
+          {/* Default Border Gradient (Transitions out on hover) */}
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-950/60 via-violet-900/40 to-blue-950/60 rounded-[32px] transition-opacity duration-700 opacity-100 group-hover:opacity-0"></div>
+
+          {/* Hover Border Gradient (Transitions in on hover) */}
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-[32px] transition-opacity duration-700 opacity-0 group-hover:opacity-100"></div>
           
-          <div className="relative z-10 w-full bg-zinc-950 rounded-[30.5px] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="flex flex-col items-start text-left max-w-[32rem]">
-              <span className="text-[11px] text-zinc-400 font-mono tracking-[0.25em] uppercase mb-3.5 font-semibold flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+          <div className="relative z-10 w-full bg-black-100 rounded-[30.5px] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden">
+            {/* Background Ambient Cosmic Tints inside */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-purple-950/20 to-blue-950/20 opacity-40 group-hover:opacity-70 group-hover:scale-[1.02] transition-all duration-700 rounded-[30.5px]"></div>
+
+            <div className="relative z-10 flex flex-col items-start text-left max-w-[32rem]">
+              <span className="text-[11px] text-purple-400 font-mono tracking-[0.25em] uppercase mb-3.5 font-semibold flex items-center gap-2">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-purple-500"></span>
+                </span>
                 Interactive Portal
               </span>
               <h4 className="text-[24px] sm:text-[30px] font-bold text-white tracking-tight leading-[120%] mb-3 font-display">
@@ -202,7 +214,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <button className="relative overflow-hidden group/btn bg-white hover:bg-zinc-100 text-black font-extrabold text-[13px] uppercase py-4 px-8 rounded-2xl flex items-center gap-2 transition-all duration-300 shadow-xl shrink-0">
+            <button className="relative z-10 overflow-hidden group/btn bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-extrabold text-[13px] uppercase py-4 px-8 rounded-2xl flex items-center gap-2 transition-all duration-500 shadow-xl shrink-0 group-hover:shadow-purple-500/20">
               <span className="relative z-10 tracking-wider">Explore Me Page</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
