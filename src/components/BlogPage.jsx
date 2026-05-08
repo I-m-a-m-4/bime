@@ -19,7 +19,7 @@ const BlogPage = () => {
       date: "11/15/2025",
       readTime: "5 min",
       description: "A deep dive into Zen AI, the intelligent forecasting engine built into Zeneva to help retail shop owners predict product demand, prevent stockouts, and optimize overall cash flow.",
-      link: "https://github.com/i-m-a-m-",
+      link: "https://github.com/I-m-a-m-4",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop",
       tags: ["zen-ai", "machine-learning", "inventory-management"]
     },
@@ -28,7 +28,7 @@ const BlogPage = () => {
       date: "10/02/2025",
       readTime: "5 min",
       description: "Exploring the challenges and architectural strategies for implementing offline caching, local data persistence, and background sync to ensure zero POS downtime for businesses.",
-      link: "https://github.com/i-m-a-m-",
+      link: "https://github.com/I-m-a-m-4",
       image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop",
       tags: ["offline-first", "progressive-web-apps", "web-performance"]
     },
@@ -37,7 +37,7 @@ const BlogPage = () => {
       date: "08/24/2025",
       readTime: "6 min",
       description: "Best practices and architectural decisions behind launching custom, secure, and fast digital storefronts for hundreds of online shops running on a shared, robust backend database.",
-      link: "https://github.com/i-m-a-m-",
+      link: "https://github.com/I-m-a-m-4",
       image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=600&auto=format&fit=crop",
       tags: ["saas-architecture", "multi-tenant", "firebase"]
     },
@@ -46,7 +46,7 @@ const BlogPage = () => {
       date: "06/12/2025",
       readTime: "5 min",
       description: "My personal principles of combining frontend engineering excellence with premium design systems, smooth gradients, and interactive micro-animations to create products users love.",
-      link: "https://github.com/i-m-a-m-",
+      link: "https://github.com/I-m-a-m-4",
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop",
       tags: ["ui-ux-design", "css-animation", "tailwindcss"]
     },
@@ -55,7 +55,7 @@ const BlogPage = () => {
       date: "04/05/2025",
       readTime: "5 min",
       description: "A reflective journey of building robust software solutions for Healthcare, NGOs, and Personal Branding platforms, focusing on clean code, solid architectures, and user-centric flows.",
-      link: "https://github.com/i-m-a-m-",
+      link: "https://github.com/I-m-a-m-4",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop",
       tags: ["clean-code", "full-stack", "software-craftsmanship"]
     }
@@ -123,7 +123,7 @@ const BlogPage = () => {
 
             <div className="flex items-center">
               <a
-                href="https://github.com/i-m-a-m-"
+                href="https://github.com/I-m-a-m-4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-[12px] md:p-[15px] hover:px-[20px] text-zinc-600 hover:text-zinc-900 rounded-[15px] hover:bg-zinc-100/50 transition-all duration-300 flex items-center gap-2 font-medium"
@@ -269,7 +269,7 @@ const BlogPage = () => {
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                   </svg>
                 </a>
-                <a href="https://github.com/i-m-a-m-" target="_blank" rel="noreferrer" title="GitHub">
+                <a href="https://github.com/I-m-a-m-4" target="_blank" rel="noreferrer" title="GitHub">
                   <svg className="w-4 h-4 text-zinc-400 hover:text-zinc-800 transition-colors cursor-pointer" fill="currentColor" viewBox="0 0 24 24">
                     <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
                   </svg>
@@ -296,7 +296,7 @@ const BlogPage = () => {
             <div className="absolute top-6 right-6 flex items-center gap-4 z-20">
               <button 
                 onClick={() => {
-                  navigator.clipboard.writeText(`Bello Imam\nFrontend Developer | Full-Stack Engineer | Graphics Designer\nbelloimam@gmail.com\nLagos, Nigeria\nGitHub: github.com/i-m-a-m-\nLinkedIn: linkedin.com/in/imam-bello`);
+                  navigator.clipboard.writeText(`Bello Imam\nFrontend Developer | Full-Stack Engineer | Graphics Designer\nbelloimam@gmail.com\nLagos, Nigeria\nGitHub: github.com/I-m-a-m-4\nLinkedIn: linkedin.com/in/imam-bello`);
                   alert("Contact details copied to clipboard!");
                 }}
                 className="text-[11px] font-mono tracking-wider uppercase text-zinc-500 hover:text-zinc-800 bg-zinc-100 hover:bg-zinc-200/80 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
@@ -331,7 +331,7 @@ const BlogPage = () => {
                   <span className="text-zinc-300">|</span>
                   <span>Lagos, Nigeria</span>
                   <span className="text-zinc-300">|</span>
-                  <a href="https://github.com/i-m-a-m-" target="_blank" rel="noreferrer" className="hover:text-zinc-800 transition-colors font-bold">GitHub: github.com/i-m-a-m-</a>
+                  <a href="https://github.com/I-m-a-m-4" target="_blank" rel="noreferrer" className="hover:text-zinc-800 transition-colors font-bold">GitHub: github.com/I-m-a-m-4</a>
                   <span className="text-zinc-300">|</span>
                   <a href="https://linkedin.com/in/imam-bello" target="_blank" rel="noreferrer" className="hover:text-zinc-800 transition-colors font-bold">LinkedIn: linkedin.com/in/imam-bello</a>
                 </div>
